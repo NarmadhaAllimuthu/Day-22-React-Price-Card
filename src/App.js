@@ -1,24 +1,142 @@
 
+
+
 import './App.css';
-import Message from './Message';
+
+import Price from './Message';
+
+
 
 function App() {
-  return (
-    <section class="pricing py-5">
-    <div class="container">
-      <div class="row">
+ 
+  const productDetails=[
+    {
+      price:"$0/month",
+      title:"FREE",
+       
+       feature:[
+        {
+          fa:"Single Users",
+          enable:true,
+        }, {
+         
+        fa:"50GB Storage",
+        enable:true
+      },
+        {
+          fa:"Unlimited Public Projects",
+          enable:true,
+        },
+         {
+          fa:"Community Access",
+          enable:true,
+         },
+          {
+            fa:"Unlimited Private Projects",
+            enable:false,
+          } ,{
+            fa:"Dedicated Phone Support",
+            enable:false,
+          },{
+            fa:"Free Subdomain",
+            enable:false,
+          },{
+            fa:"Monthly Status Reports",
+            enable:false,
+          }
+       ]
       
-         <Message price="$0" title="Free" period="/month" fa1="Single Users" fa2="5GB Storage" fa3="Unlimited Public Projects" 
-         fa4="Community Access" fa5="Unlimited Private Projects" fa6="Dedicated Phone Support" fa7="Free Subdomain" fa8="Monthly Status Reports"></Message>
-        
-        <Message price="$9" title="Plus" period="/month" fa1="5 Users" fa2="5GB Storage" fa3="Unlimited Public Projects" 
-         fa4="Community Access" fa5="Unlimited Private Projects" fa6="Dedicated Phone Support" fa7="Free Subdomain" fa8="Monthly Status Reports"></Message>
-        
-        <Message price="$49" title="Pro" period="/month" fa1="Unlimited Users" fa2="50GB Storage" fa3="Unlimited Public Projects" 
-         fa4="Community Access" fa5="Unlimited Private Projects" fa6="Dedicated Phone Support" fa7="Free Subdomain" fa8="Monthly Status Reports"></Message>
-        
-    </div>
-    </div>
+  } ,
+  {
+    price:"$9/month",
+    title:"PLUS",
+     
+     feature:[
+      {
+        fa:"5 Users",
+        enable:true,
+      }, {
+       
+      fa:"50GB Storage",
+      enable:true
+    },
+      {
+        fa:"Unlimited Public Projects",
+        enable:true,
+      },
+       {
+        fa:"Community Access",
+        enable:true,
+       },
+        {
+          fa:"Unlimited Private Projects",
+          enable:true,
+        } ,{
+          fa:"Dedicated Phone Support",
+          enable:true,
+        },{
+          fa:"Free Subdomain",
+          enable:true,
+        },{
+          fa:"Monthly Status Reports",
+          enable:false,
+        }
+     ]
+
+  },
+  {
+    price:"$49/month",
+    title:"PRO",
+   
+     
+     feature:[
+      {
+        fa:"Unlimited Users",
+        enable:true,
+      }, {
+       
+      fa:"50GB Storage",
+      enable:true
+    },
+      {
+        fa:"Unlimited Public Projects",
+        enable:true,
+      },
+       {
+        fa:"Community Access",
+        enable:true,
+       },
+        {
+          fa:"Unlimited Private Projects",
+          enable:true,
+        } ,{
+          fa:"Dedicated Phone Support",
+          enable:true,
+        },{
+          fa:"Free Subdomain",
+          enable:true,
+        },{
+          fa:"Monthly Status Reports",
+          enable:true,
+        }
+     ]
+
+  }
+
+]
+ 
+  return (
+    <section className="pricing py-5">
+      <div className="container">
+        <div className="row">
+
+{
+  productDetails.map((details)=>{
+    return <Price details={details}></Price>
+  })
+}
+        </div>
+      </div>
     </section>
   );
 }
