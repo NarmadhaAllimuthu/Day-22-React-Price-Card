@@ -12,11 +12,11 @@ function Price({details}){
       <hr></hr>
         <ul class="fa-ul">
               
-                  { details.feature.map((fea)=>{
-                    return <li className={fea.enable ?"" :"text-muted" } >
-                   {fea.enable ? <FaCheck className="fas fa-check" /> : <FaTimes className="fas fa-times" />}
+                  { details.feature.map((feat)=>{
+                    return <li className={feat.enable ?"" :"text-muted" } >
+                   {feat.enable ? <FaCheck className="fas fa-check" /> : <FaTimes className="fas fa-times" />}
 
-                     &ensp; {fea.fa}</li>
+                     &ensp; {feat.fa}</li>
                   })}
 
 </ul>
